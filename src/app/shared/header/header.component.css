@@ -1,0 +1,139 @@
+/* --- Header general --- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3a3a3a;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000;
+}
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+#logo a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s, transform 0.3s;
+}
+
+#logo a:hover {
+  color: #ff9800;
+  transform: scale(1.5);
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background 0.1s, color 0.9s;
+}
+
+ul li a:hover,
+ul li a.actived {
+  background: rgba(255, 153, 0, 0.048);
+  color: #ff9800;
+  border-radius: 25px;
+}
+
+/* Botón menú hamburguesa */
+#menu-btn {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* --- Escritorio --- */
+@media (min-width: 769px) {
+  header {
+    flex-direction: row;
+  }
+
+  /* Dividir links a izquierda y derecha del logo */
+  ul {
+    flex: 1;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Separar dos links a la izquierda y dos a la derecha */
+  ul.left {
+    justify-content: flex-end;
+    gap: 20px;
+  }
+
+  ul.right {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+}
+
+/* --- Móvil --- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    position: relative;
+  }
+
+  #menu-btn {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    z-index: 2;
+  }
+
+  #logo {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 1;
+    text-align: center;
+  }
+
+  ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 60px;
+    padding: 0;
+    text-align: center;
+  }
+
+  ul.open {
+    display: flex;
+  }
+
+  ul li {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  ul li a {
+    width: 100%;
+    display: block;
+    padding: 10px 0;
+  }
+}

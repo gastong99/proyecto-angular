@@ -1,0 +1,15 @@
+<header>
+  <button id="menu-btn" (click)="toggleMenu()" aria-label="Toggle menu">&#9776;</button>
+  
+  <ul class="left" [class.open]="menuOpen">
+    <li><a [routerLink]="['/sobre-mi']" [routerLinkActive]="['actived']">Sobre mi</a></li>
+    <li><a [routerLink]="['/contacto']" [routerLinkActive]="['actived']">Contacto</a></li>
+  </ul>
+  
+  <div id="logo"><a href="#">GG</a></div>
+  
+  <ul class="right" [class.open]="menuOpen">
+    <li><a [routerLink]="['/crear-proyecto']" [routerLinkActive]="['actived']">Crear proyecto</a></li>
+    <li><a [routerLink]="['/proyectos']" [routerLinkActive]="['actived']">Proyectos</a></li>
+  </ul>
+</header>
