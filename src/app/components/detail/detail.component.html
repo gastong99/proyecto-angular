@@ -8,8 +8,8 @@
     <div class="data">
       <h1>{{project.name}}</h1>
       <h3>{{project.description}}</h3>
-      <p>{{project.category}}</p>
-      <p>{{project.langs}}</p>
+      <p class="category">{{project.category}}</p>
+      <p class="langs">{{project.langs}}</p>
       @if (confirm == false) {
         <p>
           <a [routerLink]="['/editar-proyecto', project._id]" class="button-edit">Editar</a>
